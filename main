@@ -1,0 +1,185 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local KTSNotifyer = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local CustomOutput = Instance.new("TextLabel")
+local Cafe = Instance.new("TextButton")
+local Door = Instance.new("TextButton")
+local Sit = Instance.new("TextButton")
+local Ended = Instance.new("TextButton")
+local X = Instance.new("TextButton")
+local Notify = Instance.new("TextLabel")
+
+--Properties:
+
+KTSNotifyer.Name = "KTSNotifyer"
+KTSNotifyer.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+KTSNotifyer.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = KTSNotifyer
+Frame.BackgroundColor3 = Color3.fromRGB(255, 60, 239)
+Frame.Position = UDim2.new(0, 0, 0.498327762, 0)
+Frame.Size = UDim2.new(0, 400, 0, 300)
+
+CustomOutput.Name = "CustomOutput"
+CustomOutput.Parent = Frame
+CustomOutput.BackgroundColor3 = Color3.fromRGB(179, 255, 0)
+CustomOutput.Position = UDim2.new(0, 0, 0.5, 0)
+CustomOutput.Size = UDim2.new(0, 200, 0, 150)
+CustomOutput.Font = Enum.Font.SourceSans
+CustomOutput.Text = "No Output So Far"
+CustomOutput.TextColor3 = Color3.fromRGB(0, 0, 0)
+CustomOutput.TextSize = 14.000
+CustomOutput.TextXAlignment = Enum.TextXAlignment.Left
+CustomOutput.TextYAlignment = Enum.TextYAlignment.Top
+
+Cafe.Name = "Cafe"
+Cafe.Parent = Frame
+Cafe.BackgroundColor3 = Color3.fromRGB(255, 172, 124)
+Cafe.Size = UDim2.new(0, 200, 0, 50)
+Cafe.Font = Enum.Font.SourceSans
+Cafe.Text = "Cafe Now Open/Closed"
+Cafe.TextColor3 = Color3.fromRGB(0, 0, 0)
+Cafe.TextSize = 14.000
+
+Door.Name = "Door"
+Door.Parent = Frame
+Door.BackgroundColor3 = Color3.fromRGB(255, 172, 124)
+Door.Position = UDim2.new(0, 0, 0.166666672, 0)
+Door.Size = UDim2.new(0, 200, 0, 50)
+Door.Font = Enum.Font.SourceSans
+Door.Text = "A B Doors"
+Door.TextColor3 = Color3.fromRGB(0, 0, 0)
+Door.TextSize = 14.000
+
+Sit.Name = "Sit"
+Sit.Parent = Frame
+Sit.BackgroundColor3 = Color3.fromRGB(255, 172, 124)
+Sit.Position = UDim2.new(0, 0, 0.333333343, 0)
+Sit.Size = UDim2.new(0, 200, 0, 50)
+Sit.Font = Enum.Font.SourceSans
+Sit.Text = "Seated"
+Sit.TextColor3 = Color3.fromRGB(0, 0, 0)
+Sit.TextSize = 14.000
+
+Ended.Name = "Ended"
+Ended.Parent = Frame
+Ended.BackgroundColor3 = Color3.fromRGB(255, 172, 124)
+Ended.Position = UDim2.new(0.5, 0, 0, 0)
+Ended.Size = UDim2.new(0, 200, 0, 50)
+Ended.Font = Enum.Font.SourceSans
+Ended.Text = "Ended Message"
+Ended.TextColor3 = Color3.fromRGB(0, 0, 0)
+Ended.TextSize = 14.000
+
+X.Name = "X"
+X.Parent = Frame
+X.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+X.Position = UDim2.new(0.9375, 0, 0.923333287, 0)
+X.Size = UDim2.new(0, 25, 0, 25)
+X.Font = Enum.Font.SourceSans
+X.Text = "X"
+X.TextColor3 = Color3.fromRGB(255, 0, 4)
+X.TextScaled = true
+X.TextSize = 50.000
+X.TextWrapped = true
+
+Notify.Name = "Notify"
+Notify.Parent = KTSNotifyer
+Notify.BackgroundColor3 = Color3.fromRGB(179, 255, 0)
+Notify.Position = UDim2.new(0.76798141, 0, 0.85953176, 0)
+Notify.Size = UDim2.new(0, 200, 0, 84)
+Notify.Font = Enum.Font.SourceSans
+Notify.Text = "No Output So Far"
+Notify.TextColor3 = Color3.fromRGB(0, 0, 0)
+Notify.TextSize = 14.000
+Notify.TextXAlignment = Enum.TextXAlignment.Left
+Notify.TextYAlignment = Enum.TextYAlignment.Top
+
+-- Scripts:
+
+local function YTEQ_fake_script() -- Cafe.Script 
+	local script = Instance.new('Script', Cafe)
+
+	local Notify = script.Parent.Parent.Parent.Notify
+	local Output = script.Parent.Parent.CustomOutput
+	
+	local PublicMSG = "Welcome to KTS! Our Cafe is now open! Please make your way to the Cafe for a drink and or a quick snack!"
+	local LogMSG = "Cafe Notify msg played now do it more."
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		Notify.Text = PublicMSG
+		Output.Text = LogMSG.upper()
+	end)
+end
+coroutine.wrap(YTEQ_fake_script)()
+local function DFOFA_fake_script() -- Door.Script 
+	local script = Instance.new('Script', Door)
+
+	local Notify = script.Parent.Parent.Parent.Notify
+	local Output = script.Parent.Parent.CustomOutput
+	
+	local PublicMSG = "Welcome to KTS! Doors A and B are now open! Please make your way up to the doors by the door next to the cafe staff entrance."
+	local LogMSG = "Door Notify msg played now do it more."
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		Notify.Text = PublicMSG
+		Output.Text = LogMSG
+	end)
+end
+coroutine.wrap(DFOFA_fake_script)()
+local function FPXJYV_fake_script() -- Sit.Script 
+	local script = Instance.new('Script', Sit)
+
+	local Notify = script.Parent.Parent.Parent.Notify
+	local Output = script.Parent.Parent.CustomOutput
+	
+	local PublicMSG = "Welcome to KTS! Please make your way to youe seats before the show starts. We do not like when you get up a lot during out show so please don't."
+	local LogMSG = "Seat Notify msg played now do it more."
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		Notify.Text = PublicMSG
+		Output.Text = LogMSG
+	end)
+end
+coroutine.wrap(FPXJYV_fake_script)()
+local function MKVFFEK_fake_script() -- Ended.Script 
+	local script = Instance.new('Script', Ended)
+
+	local Notify = script.Parent.Parent.Parent.Notify
+	local Output = script.Parent.Parent.CustomOutput
+	
+	local PublicMSG = "Welcome to KTS! Our show has sadly ended :( but wait! You can still join for some other show! Just join next time we host!"
+	local LogMSG = "Ended Notify msg played now do it more."
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		Notify.Text = PublicMSG
+		Output.Text = LogMSG
+	end)
+end
+coroutine.wrap(MKVFFEK_fake_script)()
+local function LVQAPV_fake_script() -- X.LocalScript 
+	local script = Instance.new('LocalScript', X)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+end
+coroutine.wrap(LVQAPV_fake_script)()
+local function LHJB_fake_script() -- KTSNotifyer.LocalScript 
+	local script = Instance.new('LocalScript', KTSNotifyer)
+
+	game.Players.PlayerAdded:Connect(function()
+		if game.Players.LocalPlayer.Name == "canaada1234" then
+			game.Players.LocalPlayer.Chatted:Connect(function(msg)
+				if msg == "/openUI" then
+					script.Parent.Frame.Visible = true
+				end
+			end)
+		end
+	end)
+end
+coroutine.wrap(LHJB_fake_script)()
