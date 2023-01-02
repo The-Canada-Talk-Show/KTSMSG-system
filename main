@@ -12,6 +12,7 @@ local Sit = Instance.new("TextButton")
 local Ended = Instance.new("TextButton")
 local X = Instance.new("TextButton")
 local Notify = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
 
 --Properties:
 
@@ -23,6 +24,7 @@ Frame.Parent = KTSNotifyer
 Frame.BackgroundColor3 = Color3.fromRGB(255, 60, 239)
 Frame.Position = UDim2.new(0, 0, 0.498327762, 0)
 Frame.Size = UDim2.new(0, 400, 0, 300)
+Frame.Visible = false
 
 CustomOutput.Name = "CustomOutput"
 CustomOutput.Parent = Frame
@@ -92,6 +94,7 @@ Notify.Parent = KTSNotifyer
 Notify.BackgroundColor3 = Color3.fromRGB(179, 255, 0)
 Notify.Position = UDim2.new(0.76798141, 0, 0.85953176, 0)
 Notify.Size = UDim2.new(0, 200, 0, 84)
+Notify.Visible = false
 Notify.Font = Enum.Font.SourceSans
 Notify.Text = "No Output So Far"
 Notify.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -99,9 +102,18 @@ Notify.TextSize = 14.000
 Notify.TextXAlignment = Enum.TextXAlignment.Left
 Notify.TextYAlignment = Enum.TextYAlignment.Top
 
+TextButton.Parent = KTSNotifyer
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 0.900
+TextButton.Size = UDim2.new(0, 12, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = ""
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
+
 -- Scripts:
 
-local function YTEQ_fake_script() -- Cafe.Script 
+local function HPNVPX_fake_script() -- Cafe.Script 
 	local script = Instance.new('Script', Cafe)
 
 	local Notify = script.Parent.Parent.Parent.Notify
@@ -115,8 +127,8 @@ local function YTEQ_fake_script() -- Cafe.Script
 		Output.Text = LogMSG.upper()
 	end)
 end
-coroutine.wrap(YTEQ_fake_script)()
-local function DFOFA_fake_script() -- Door.Script 
+coroutine.wrap(HPNVPX_fake_script)()
+local function PYUJ_fake_script() -- Door.Script 
 	local script = Instance.new('Script', Door)
 
 	local Notify = script.Parent.Parent.Parent.Notify
@@ -130,8 +142,8 @@ local function DFOFA_fake_script() -- Door.Script
 		Output.Text = LogMSG
 	end)
 end
-coroutine.wrap(DFOFA_fake_script)()
-local function FPXJYV_fake_script() -- Sit.Script 
+coroutine.wrap(PYUJ_fake_script)()
+local function VPVFA_fake_script() -- Sit.Script 
 	local script = Instance.new('Script', Sit)
 
 	local Notify = script.Parent.Parent.Parent.Notify
@@ -145,8 +157,8 @@ local function FPXJYV_fake_script() -- Sit.Script
 		Output.Text = LogMSG
 	end)
 end
-coroutine.wrap(FPXJYV_fake_script)()
-local function MKVFFEK_fake_script() -- Ended.Script 
+coroutine.wrap(VPVFA_fake_script)()
+local function SJNDNHQ_fake_script() -- Ended.Script 
 	local script = Instance.new('Script', Ended)
 
 	local Notify = script.Parent.Parent.Parent.Notify
@@ -160,26 +172,20 @@ local function MKVFFEK_fake_script() -- Ended.Script
 		Output.Text = LogMSG
 	end)
 end
-coroutine.wrap(MKVFFEK_fake_script)()
-local function LVQAPV_fake_script() -- X.LocalScript 
+coroutine.wrap(SJNDNHQ_fake_script)()
+local function GOROLB_fake_script() -- X.LocalScript 
 	local script = Instance.new('LocalScript', X)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(LVQAPV_fake_script)()
-local function LHJB_fake_script() -- KTSNotifyer.LocalScript 
-	local script = Instance.new('LocalScript', KTSNotifyer)
+coroutine.wrap(GOROLB_fake_script)()
+local function TXWYXRR_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
 
-	game.Players.PlayerAdded:Connect(function()
-		if game.Players.LocalPlayer.Name == "canaada1234" then
-			game.Players.LocalPlayer.Chatted:Connect(function(msg)
-				if msg == "/openUI" then
-					script.Parent.Frame.Visible = true
-				end
-			end)
-		end
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Frame.Visible = true
 	end)
 end
-coroutine.wrap(LHJB_fake_script)()
+coroutine.wrap(TXWYXRR_fake_script)()
